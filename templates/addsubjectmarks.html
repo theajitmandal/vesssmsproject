@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">Class</div>
+        <div class="col">Subject</div>
+        <div class="col">Full Marks</div>
+        <div class="col">Pass Marks</div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="row">
+                <div class="col-1">Roll</div>
+                <div class="col-2">Name</div>
+                <div class="col-1">Gender</div>
+                <div class="col-1">Address</div>
+                <div class="col-7">
+                    {% for subject in subjects %}
+                        {{subject.subjectname}}
+                    {% endfor %}
+                </div>
+        </div>
+    <form>
+        {% csrf_token %}
+        {% for student in students %}
+            <div class="row">
+                    <div class="col-1">{{student.id}}</div>
+                    <div class="col-2">{{student.name}}</div>
+                    <div class="col-1">{{student.gender}}</div>
+                    <div class="col-1">{{student.address}}</div>
+                    <div class="col-7">
+                        {% for subject in subjects %}
+                            <input type="number" id="quantity" name="{{subject.name}}" min="0" max="75">
+                        {% endfor %}
+                    </div>
+            </div>
+        {% endfor %}
+        <center><button type="submit">Submit</button></center>
+    </form>
+</div>
+
+{% endblock %}

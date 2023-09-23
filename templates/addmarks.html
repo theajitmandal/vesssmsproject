@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<form action="{% url 'addsubjectmarks' %}">
+  {% csrf_token %}
+  <label for="class">Choose class:</label>
+  <select id="class" name="class">
+      {% for classname in classnames %}
+        <option value="{{classname.classname}}">{{classname.classname}}</option>
+      {% endfor %}
+  </select>
+    <label for="subject">Choose subject:</label>
+  <select id="subject" name="subject">
+      {% for subject in subjects %}
+        <option value="{{subject.subjectname}}">{{subject.subjectname}}</option>
+      {% endfor %}
+  </select>
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
