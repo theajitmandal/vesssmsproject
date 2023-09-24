@@ -34,9 +34,9 @@ class StudentResult(models.Model):
     obtainedmark = models.DecimalField(max_digits=6, decimal_places=2)
 
 class Contact(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.EmailField(max_length=300)
-    phone = models.CharField(max_length=200)
+    name = models.CharField(max_length=20)
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=100)
     message = models.TextField()
 
     def __str__(self):
