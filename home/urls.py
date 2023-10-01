@@ -8,4 +8,5 @@ urlpatterns = [
     path("contactus", contactus, name="contactus"),
     path("addmarks", addmarks, name="addmarks"),
     path("addsubjectmarks", addsubjectmarks, name="addsubjectmarks"),
+    path("signup", signup, name="signup"),
 ]
