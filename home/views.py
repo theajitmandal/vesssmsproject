@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -71,4 +71,4 @@ def signup(request):
             messages.error(request, 'Password does not match !')
             return redirect('/signup')
 
-    return  render(request, 'signup.html')
+    return render(request, 'signup.html')
