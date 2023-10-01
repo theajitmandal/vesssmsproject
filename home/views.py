@@ -43,3 +43,27 @@ def addsubjectmarks(request):
 
         )
         return render(request, 'addsubjectmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
+
+
+def signup(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        cpassword = request.POST['cpassword']
+        if password == cpassword:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'The username is already taken')
+                return redirect('/signup')
+            if User.objects.filter(email=email).exists():
+                messages.error(request, 'The email is already taken')
+                return redirect('/signup')
+            else:
+                data = User.objects.create_user(
+                    username = username,
+                    email = email,
+                    password = password
+                )
+                data.save()
+
+    return  render(request, 'signup.html');
