@@ -72,3 +72,6 @@ def signup(request):
             return redirect('/signup')
 
     return render(request, 'signup.html')
+
+# def login(request):
+#     return render(request, 'registration/login.html')
