@@ -67,6 +67,7 @@ def signup(request):
                     password = password
                 )
                 data.save()
+                return redirect('/accounts/login')
         else:
             messages.error(request, 'Password does not match !')
             return redirect('/signup')
