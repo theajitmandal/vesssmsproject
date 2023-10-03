@@ -12,6 +12,7 @@ class ClassName(models.Model):
 class Subject(models.Model):
     subjectname = models.CharField(max_length=100)
     classname = models.ForeignKey(ClassName, on_delete=models.CASCADE)
+    marksobtained = models.IntegerField(default=0)
 
     def __str__(self):
         return self.subjectname
@@ -31,6 +32,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=50, default="male")
     address = models.TextField()
     phone = models.CharField(max_length=800)
+    # marks = models.IntegerField()
     classname = models.ForeignKey(ClassName, on_delete=models.CASCADE)
 
     def __str__(self):

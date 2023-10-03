@@ -17,13 +17,10 @@
                 <div class="col-2">Name</div>
                 <div class="col-1">Gender</div>
                 <div class="col-1">Address</div>
-                <div class="col-7">
-                    {% for subject in subjects %}
-                        {{subject.subjectname}}
-                    {% endfor %}
-                </div>
+                <div class="col-1">Total</div>
+                <div class="col-1">GPA</div>
         </div>
-    <form action="{% url 'addsubjectmarks' %}" method="POST">
+    <form>
         {% csrf_token %}
         {% for student in students %}
             <div class="row">
@@ -32,15 +29,11 @@
                     <div class="col-1">{{student.gender}}</div>
                     <div class="col-1">{{student.address}}</div>
                     <div class="col-7">
-                        {% for subject in subjects %}
-                            <input type="number" id="quantity" name="{{student.obtainedmark}}" min="0" max="75">
-                        {% endfor %}
                     </div>
             </div>
         {% endfor %}
         <center><button type="submit">Submit</button></center>
     </form>
-    <center><button type="submit">View Result</button></center>
 </div>
 
 

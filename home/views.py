@@ -29,6 +29,8 @@ def contactus(request):
                 message = message
             )
             data.save()
+            message = {'message' :'Your message is submitted successfully'}
+            return render(request, 'contact.html', message)
 
     return render(request, 'contact.html')
 
@@ -39,12 +41,26 @@ def addmarks(request):
     return render(request, 'addmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
 
 def addsubjectmarks(request):
+    if request.method == 'POST':
+        obtainedmark = request.POST['']
 
     classnames = ClassName.objects.all()
     subjects = Subject.objects.all()
     students = Student.objects.all()
 
     return render(request, 'addsubjectmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
+
+# def viewresults(request):
+#     if request.method == 'POST':
+#         classnames = ClassName.objects.all()
+#         subjects = Subject.objects.all()
+#         students = Student.objects.all()
+#         marksobtained = request.POST['marksobtained']
+#
+#             data =
+#
+#
+#     return render(request, 'viewresult.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
 
 
 def signup(request):
