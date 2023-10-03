@@ -16,6 +16,15 @@ class Subject(models.Model):
     def __str__(self):
         return self.subjectname
 
+class Teacher(models.Model):
+    name = models.CharField(max_length=500)
+    gmail = models.EmailField()
+    gender = models.CharField(max_length=50, default="male")
+    address = models.TextField()
+    phone = models.CharField(max_length=800)
+    def __str__(self):
+        return self.name
+
 class Student(models.Model):
     name = models.CharField(max_length=500)
     gmail = models.EmailField()

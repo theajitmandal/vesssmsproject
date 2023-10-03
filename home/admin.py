@@ -6,4 +6,5 @@ admin.site.register(Contact)
 admin.site.register(ClassName)
 admin.site.register(Subject)
 admin.site.register(Student)
+admin.site.register(Teacher)
 
