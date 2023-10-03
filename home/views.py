@@ -41,26 +41,14 @@ def addmarks(request):
     return render(request, 'addmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
 
 def addsubjectmarks(request):
-    if request.method == 'POST':
-        obtainedmark = request.POST['']
-
     classnames = ClassName.objects.all()
     subjects = Subject.objects.all()
     students = Student.objects.all()
 
     return render(request, 'addsubjectmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
 
-# def viewresults(request):
-#     if request.method == 'POST':
-#         classnames = ClassName.objects.all()
-#         subjects = Subject.objects.all()
-#         students = Student.objects.all()
-#         marksobtained = request.POST['marksobtained']
-#
-#             data =
-#
-#
-#     return render(request, 'viewresult.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
+def viewresults(request):
+    return render(request, 'viewresult.html')
 
 
 def signup(request):

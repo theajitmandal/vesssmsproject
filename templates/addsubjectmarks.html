@@ -17,11 +17,7 @@
                 <div class="col-2">Name</div>
                 <div class="col-1">Gender</div>
                 <div class="col-1">Address</div>
-                <div class="col-7">
-                    {% for subject in subjects %}
-                        {{subject.subjectname}}
-                    {% endfor %}
-                </div>
+                <div class="col-1">Marks in English</div>
         </div>
     <form action="{% url 'addsubjectmarks' %}" method="POST">
         {% csrf_token %}
@@ -32,15 +28,13 @@
                     <div class="col-1">{{student.gender}}</div>
                     <div class="col-1">{{student.address}}</div>
                     <div class="col-7">
-                        {% for subject in subjects %}
-                            <input type="number" id="quantity" name="{{student.obtainedmark}}" min="0" max="75">
-                        {% endfor %}
+                            <input type="number" id="quantity" name="" min="0" max="75">
                     </div>
             </div>
         {% endfor %}
         <center><button type="submit">Submit</button></center>
     </form>
-    <center><button type="submit">View Result</button></center>
+    <a class="nav-link" href="viewresult"> View Result </a>
 </div>
 
 
