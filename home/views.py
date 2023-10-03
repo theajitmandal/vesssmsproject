@@ -47,9 +47,9 @@ def addsubjectmarks(request):
 
     return render(request, 'addsubjectmarks.html', {'classnames' : classnames, 'subjects' : subjects, 'students': students})
 
-def viewresults(request):
-    return render(request, 'viewresult.html')
-
+def viewresult(request):
+    students = Student.objects.all();
+    return render(request, 'viewresult.html', {'students': students})
 
 def signup(request):
     if request.method == 'POST':
