@@ -16,6 +16,11 @@
         </h2>
       </div>
     </div>
+    <div class="row">
+    {% for message in messages %}
+                    <center><font color="red">{{message}}</font></center>
+    {% endfor %}
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-6 ">
@@ -83,15 +88,14 @@
           <div class="info_logo">
             <div>
               <a href="">
-                <img src="{% static 'images/logo.png' %}" alt="" />
+                <img src="{% static 'images/school.png' %}" alt="" />
                 <span>
-                  Brighton
+                  Velvet School
                 </span>
               </a>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration
+              "Quality education is our commitment." It is our faith that knowledge alone cannot be the key of success.
             </p>
           </div>
         </div>
@@ -101,8 +105,9 @@
               Contact Us
             </h5>
             <p class="pr-0 pr-md-4 pr-lg-5">
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
+              <i class="fa fa-phone" aria-hidden="true">  025-585851</i>
+              <i class="fa fa-mobile" aria-hidden="true">  +977-9804064652</i>
+              <i class="fa fa-map-marker" aria-hidden="true">  Itahari-6, Sunsari</i>
             </p>
           </div>
         </div>
@@ -112,20 +117,19 @@
               INFORMATION
             </h5>
             <p class="pr-0 pr-md-4 pr-md-5">
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
+              Velvet English Secondary School is imparting quality education to the students since 2068 B.S.
             </p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="pl-0 pl-lg-5 pl-md-4">
             <h5>
-              MY ACCOUNT
-
+              Follow Us
             </h5>
             <p>
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
+                <i class="fa fa-facebook p-2" style="font-size:24px;" aria-hidden="true"></i>
+                <i class="fa fa-whatsapp p-2" style="font-size:24px;" aria-hidden="true"></i>
+                <i class="fa fa-youtube-play p-2" style="font-size:24px;" aria-hidden="true"></i>
             </p>
 
           </div>
@@ -133,7 +137,6 @@
       </div>
     </div>
   </section>
-
   <!-- end info_section -->
 
  {% endblock %}

@@ -19,13 +19,16 @@ def contactus(request):
         email = request.POST['email']
         phone = request.POST['phone']
         message = request.POST['message']
-        data = Contact.objects.create(
-            name = name,
-            email = email,
-            phone = phone,
-            message = message
-        )
-        data.save()
+        if len('name') >= 20:
+            messages.error(request, 'Please enter a valid name')
+        else:
+            data = Contact.objects.create(
+                name = name,
+                email = email,
+                phone = phone,
+                message = message
+            )
+            data.save()
 
     return render(request, 'contact.html')
 

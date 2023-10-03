@@ -35,8 +35,8 @@ class StudentResult(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=20)
-    email = models.EmailField(max_length=100)
-    phone = models.CharField(max_length=100)
+    email = models.EmailField(max_length=20)
+    phone = models.CharField(max_length=10)
     message = models.TextField()
 
     def __str__(self):
