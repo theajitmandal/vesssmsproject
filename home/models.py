@@ -32,7 +32,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=50, default="male")
     address = models.TextField()
     phone = models.CharField(max_length=800)
-    # marks = models.IntegerField()
+    marks = models.IntegerField()
     classname = models.ForeignKey(ClassName, on_delete=models.CASCADE)
 
     def __str__(self):

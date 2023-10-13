@@ -32,6 +32,10 @@ def contactus(request):
             message = {'message' :'Your message is submitted successfully'}
             return render(request, 'contact.html', message)
 
+        data.save()
+        message = {'message': 'Your message is submitted successfully'}
+        return render(request, 'contact.html', message)
+
     return render(request, 'contact.html')
 
 def addmarks(request):
